@@ -1,0 +1,103 @@
+	/*分页样式*/
+	#mike_page_style .pagination {
+		text-align: right;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	#mike_page_style .pagination li {
+		margin: 0px 5px;
+		border: 1px solid #e6e6e6;
+		padding: 3px 10px;
+		display: inline-block;
+	}
+	#mike_page_style .pagination .active {
+		background-color: #46A3FF;
+		color: #fff;
+	}
+	#mike_page_style .pagination .disabled {
+		color: #aaa;
+	}
+	
+	/*图片上传样式(小)*/
+	#mike_img_style_small {
+		float: left;
+		position: relative;
+		width: 80px;
+		height: 80px;
+		border: 1px solid #999;
+		overflow: hidden;
+		border-radius: 15px;
+		margin-bottom: 0;
+		margin-left: 0px;
+	}
+
+	#mike_img_style_small .imgnum {
+		left: 0px;
+		top: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#mike_img_style_small .imgnum input {
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		opacity: 0;
+		left: 0px;
+		top: 0;
+		z-index: 9999;
+	}
+
+	#mike_img_style_small .imgnum img {
+		width: 80px;
+		height: 80px;
+		position: absolute;
+		top: 0;
+		left: 0px;
+		z-index: 1;
+	}
+	
+	/*图片上传样式(大)*/
+	#mike_img_style_big {
+		float: left;
+		position: relative;
+		width: 218px;
+		height:130px;
+		border: 1px solid #999;
+		overflow: hidden;
+		border-radius: 15px;
+		margin-bottom: 0;
+		margin-left: 0px;
+	}
+
+	#mike_img_style_big .imgnum {
+		left: 0px;
+		top: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#mike_img_style_big .imgnum input {
+		position: absolute;
+		width: 218px;
+		height:130px;
+		opacity: 0;
+		left: 0px;
+		top: 0;
+		z-index: 9999;
+	}
+
+	#mike_img_style_big .imgnum img {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0px;
+		z-index: 1;
+	}
+	
+	
+	/************************************select框多选【bootstrap-select】*******************************************************/
+	.ms-parent{
+		width:100%  !important;
+	}

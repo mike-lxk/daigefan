@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Canteen extends Model
+{
+    # 白名单
+    // protected $fillable = ['允许添加的字段名'];
+    # 黑名单
+    protected $guarded = [];
+
+    public $timestamps = false;
+
+
+    // 获取所属学校
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+    }
+     
+}
