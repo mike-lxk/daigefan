@@ -12,4 +12,12 @@ class Rider extends Model
     protected $guarded = [];
 
     public $timestamps = false;
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+
+    }
+
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -25,17 +26,27 @@ class Order extends Model
     }
 
     // 获取总订单量
-    public function totalOrderNum($shop_id){
+    public function totalOrderNum($shop_id)
+    {
         return $this->where('shop_id',$shop_id)->whereNotIn('status',[1,4,9])->count();
     }
 
     // 获取当月订单量
-    public function mouthOrderNum($shop_id){
+    public function mouthOrderNum($shop_id)
+    {
         return $this->where('shop_id',$shop_id)->whereNotIn('status',[1,4,9])->whereBetween('add_time',[$this->currentMouthStart,$this->currentMouthEnd])->count();
     }
 
     // 获取当天订单量
-    public function dayOrderNum($shop_id){
+    public function dayOrderNum($shop_id)
+    {
         return $this->where('shop_id',$shop_id)->whereNotIn('status',[1,4,9])->whereBetween('add_time',[strtotime(date('Y-m-d 00:00:00')),strtotime(date('Y-m-d 23:59:59'))])->count();
+    }
+
+
+    // 获取当前用户的下单情况
+    public function orderStatistics($userId)
+    {
+        return $this->where('user_id',$userId)->select(DB::raw('count(id) as num, sum(money) as money'))->first();
     }
 }

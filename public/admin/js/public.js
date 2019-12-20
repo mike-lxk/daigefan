@@ -71,6 +71,25 @@ function del(obj,url,id) {
 }
 
 
+
+/**
+ * 恢复
+ * @param obj   当前对象
+ * @param url   请求的接口
+ */
+function restore(obj,url,id) {
+    layer.confirm('确认要恢复吗？', function () {
+        $.get(url + '/' + id,'', function (res) {
+            if (res.code == 200) {
+                $(obj).parents("tr").remove();
+                layer.msg(res.msg, { icon: 1});return;
+            } else {
+                layer.msg(res.msg, { icon: 2});return;
+            }
+        }, "json");
+    });
+}
+
 /** 
  * 编辑页面
  * @param title	标题

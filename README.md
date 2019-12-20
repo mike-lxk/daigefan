@@ -75,5 +75,5 @@ The Laravel framework is open-source software licensed under the [MIT license](h
 ## 项目code码
 - 200 表示请求成功
 - 201 表示请求失败
-- 204 表示没有因业务逻辑需求，不可处理
+- 204 表示因业务逻辑需求的限制，不可处理
 - 205 表示表单验证失败

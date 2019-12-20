@@ -95,6 +95,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => ['chec
     # 骑手管理
     Route::get('rider/index', 'RiderController@index')->name('admin.rider.index'); // 列表
     Route::get('rider/check_index', 'RiderController@checkIndex')->name('admin.rider.check_index'); // 审核列表
+    Route::get('rider/show/{id}', 'RiderController@show')->name('admin.rider.show'); // 查看-详情
+    Route::get('rider/check_show/{id}', 'RiderController@CheckShow')->name('admin.rider.check_show'); // 查看-审核详情
+    Route::get('rider/status/{id}/{status}', 'RiderController@status')->name('admin.rider.status'); // 设置
+    Route::get('rider/del/{id}', 'RiderController@del')->name('admin.rider.del'); // 删除
 
     # 商家管理
     Route::get('shop/index', 'ShopController@index')->name('admin.shop.index'); // 列表
@@ -116,6 +120,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => ['chec
 
     # 投诉反馈管理
     Route::get('feedback/index', 'FeedbackController@index')->name('admin.feedback.index'); // 投诉反馈列表
+    Route::get('feedback/show/{id}', 'FeedbackController@show')->name('admin.feedback.show'); // 查看-详情
+    Route::get('feedback/status/{id}/{status}', 'FeedbackController@status')->name('admin.feedback.status'); // 设置
+    Route::get('feedback/del/{id}', 'FeedbackController@del')->name('admin.feedback.del'); // 删除
 
     # 意向管理 - 商家
     Route::get('merchant_intention/index', 'MerchantIntentionController@index')->name('admin.merchant_intention.index'); // 意向商家
@@ -125,7 +132,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => ['chec
 
     # 会员管理
     Route::get('user/index', 'UserController@index')->name('admin.user.index'); // 会员管理
-    Route::get('user/recycleIndex', 'UserController@recycleIndex')->name('admin.user.recycleIndex'); // 回收站
+    Route::get('user/del/{id}', 'UserController@del')->name('admin.user.del'); // 删除【添加至回收站】
+    Route::get('user/restore/{id}', 'UserController@restore')->name('admin.user.restore'); // 恢复
+    Route::get('user/show/{id}', 'UserController@show')->name('admin.user.show'); // 详情
+    Route::get('user/recycle_index', 'UserController@recycleIndex')->name('admin.user.recycle_index'); // 回收站
 
 
     
