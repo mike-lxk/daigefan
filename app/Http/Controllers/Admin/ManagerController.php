@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ManagerRequest;
 use App\Models\Manager;
 use App\Models\Role;
+use Illuminate\Support\Facades\Cache;
 
 class ManagerController extends Controller
 {
@@ -16,6 +17,7 @@ class ManagerController extends Controller
      */
     public function index(Request $request)
     {
+        Cache::store('redis')->put('USER_CONFIRM:'.'s1','s1',4);
         // 搜索条件
         $where = [];
         $ltime = $request->input('ltime');
@@ -54,11 +56,9 @@ class ManagerController extends Controller
     public function insert(ManagerRequest $request)
     {
         $data = $request->post();
-        $data['password'] = bcrypt($data['password']);
         $data['create_time'] = time();
         $data['last_login_time'] = time();
         $data['ip'] = $request->ip();
-        unset($data['password_confirmation']);
         $res = Manager::create($data);
         if (!$res) {
             show_msg(201,'添加失败');

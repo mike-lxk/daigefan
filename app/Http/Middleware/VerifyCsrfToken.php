@@ -15,10 +15,11 @@ class VerifyCsrfToken extends Middleware
 
     /**
      * The URIs that should be excluded from CSRF verification.
+     * 屏蔽csrf验证的路由
      *
      * @var array
      */
     protected $except = [
-        //
+        'api/wechat/*',
     ];
 }

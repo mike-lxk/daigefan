@@ -1,3 +1,4 @@
+use Illuminate\Foundation\ComposerScripts;
 {
     "name": "laravel/laravel",
     "type": "project",
@@ -46,7 +47,9 @@
         ],
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "app/Extend",
+            "app/Service"
         ]
     },
     "autoload-dev": {

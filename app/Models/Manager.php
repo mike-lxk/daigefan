@@ -11,7 +11,7 @@ class Manager extends Model
     # 白名单
     // protected $fillable = ['允许添加的字段名'];
     # 黑名单
-    protected $guarded = [];
+    protected $guarded = ['_token','password_confirmation'];
 
     public $timestamps = false;
 
@@ -57,5 +57,12 @@ class Manager extends Model
         return $this->belongsTo(Role::class);
 
     }
+
+    // 修改器 - 修改密码
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+    
      
 }
