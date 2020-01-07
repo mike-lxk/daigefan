@@ -15,9 +15,8 @@ class AdvertRequest extends BaseRequest
             'type' => 'required',
             'start_time' => 'required',
             'end_time' => 'required',
-            'imgurl' => 'required',
+            'imgurl' => 'required|mimes:jpeg,bmp,png,gif|dimensions:min_width=200,min_height=100',  // 限制图片的格式以及分辨率
             'sort' => 'required'
-
         ];
     }
     // 错误提示信息
@@ -31,6 +30,8 @@ class AdvertRequest extends BaseRequest
             'start_time.required' => '请选择开始时间',
             'end_time.required' => '请选择结束时间',
             'imgurl.required' => '请选择广告图',
+            'imgurl.mimes' =>'头像必须是 jpeg, bmp, png, gif 格式的图片',
+            'imgurl.dimensions' => '图片的清晰度不够，宽需要 200px 以上,高需要 100px 以上',
             'sort.required' => '请填写排序'
         ];
     }

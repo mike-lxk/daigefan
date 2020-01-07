@@ -93,11 +93,12 @@ return [
      * 小程序
      */
     'mini_program' => [
+        // 客户端小程序
         'default' => [
-            'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', '111'),
-            'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', '222'),
-            'token'   => env('WECHAT_MINI_PROGRAM_TOKEN', '333'),
-            'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', '444'),
+            'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', 'wx7e84dbf300d4764d'),
+            'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', '7c6bd82277d5b1d7f77c05d4cb1987b7'),
+            'token'   => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
+            'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', ''),
         ],
     ],
 
@@ -105,14 +106,15 @@ return [
      * 微信支付
      */
     'payment' => [
+        // 客户端支付
         'default' => [
             'sandbox'            => env('WECHAT_PAYMENT_SANDBOX', false),
-            'app_id'             => env('WECHAT_PAYMENT_APPID', ''),
-            'mch_id'             => env('WECHAT_PAYMENT_MCH_ID', 'your-mch-id'),
-            'key'                => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
-            'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/cert/apiclient_cert.pem'),    // XXX: 绝对路径！！！！
-            'key_path'           => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/cert/apiclient_key.pem'),      // XXX: 绝对路径！！！！
-            'notify_url'         => 'http://example.com/payments/wechat-notify',                           // 默认支付结果通知地址
+            'app_id'             => env('WECHAT_PAYMENT_APPID', 'wx7e84dbf300d4764d'),
+            'mch_id'             => env('WECHAT_PAYMENT_MCH_ID', '1538416851'),
+            'key'                => env('WECHAT_PAYMENT_KEY', 'iew0a4ek8d2ap5nvn78bnsoq7m3wlfcs'),
+            'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', '/wechat/key_cert/apiclient_cert.pem'),    // XXX: 绝对路径！！！！
+            'key_path'           => env('WECHAT_PAYMENT_KEY_PATH', '/wechat/key_cert/apiclient_key.pem'),      // XXX: 绝对路径！！！！
+            'notify_url'         => env('WECHAT_PAYMENT_NOTIFY_URL', 'http://dgf.test/api/wechat/payments/notify'),  // 默认支付结果通知地址
         ],
         // ...
     ],
